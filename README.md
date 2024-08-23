@@ -29,4 +29,4 @@ Stay tuned for updates!
 
 ## Author
 
-**Syed Muhammad Hussnain Raza**
+**[Syed Muhammad Hussnain Raza](https://www.linkedin.com/in/syed-muhammad-hussnain-raza)**
