@@ -1,4 +1,6 @@
-public class Lecture_10_Arrays {
+package Lecture_10_Arrays;
+
+public class Q_InitializeAndPrint {
     // Arrays in Java
     public static void main(String[] args) {
     // Initializing array
@@ -13,12 +15,12 @@ public class Lecture_10_Arrays {
         // Method# 2
         int [] marksArr2 = {1, 2, 3, 4, 5};
 
-        // Printing array
-        // for loop
+    // Printing array
+        // 1 - for loop
         for (int i = 0; i < marksArr1.length; i++) {
             System.out.println("marksArr1[" + i + "]" + " = " + marksArr1[i]);
         }
-        // for each loop
+        // 2 - for each loop
         for (int num : marksArr2) {
             System.out.println(num);
         }
