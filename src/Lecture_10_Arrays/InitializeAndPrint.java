@@ -1,6 +1,6 @@
 package Lecture_10_Arrays;
 
-public class Q_InitializeAndPrint {
+public class InitializeAndPrint {
     // Arrays in Java
     public static void main(String[] args) {
     // Initializing array
