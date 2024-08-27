@@ -8,5 +8,7 @@ public class Eight {
         int num = sc.nextInt();
 
         System.out.println("\n Output: " + num * 8);
+    
+        sc.close();
     }
 }
