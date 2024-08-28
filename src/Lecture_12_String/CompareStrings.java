@@ -6,11 +6,11 @@ public class CompareStrings {
         String name2 = "Muhammad Ali" ;
         String name3 = "Syed Hussnain";
 
-//        if (name1.compareTo(name3) == 0) {
-//            System.out.println("Equal strings");
-//        } else if (name1.compareTo(name3) == 1) {
-//            System.out.println("Not equal");
-//        }
+        if (name1.compareTo(name3) == 0) {
+            System.out.println("Equal strings");
+        } else if (name1.compareTo(name3) == 1) {
+            System.out.println("Not equal");
+        }
 
         // Use of compareTo instead of ==
         if (new String("Name") == new String("Name")) {
