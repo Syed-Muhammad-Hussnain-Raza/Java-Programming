@@ -1,4 +1,4 @@
-package Lecture_14_BitManipulation;
+package Lecture_15_BitManipulation;
 
 import java.util.Scanner;
 
