@@ -2,7 +2,7 @@ package Lecture_17_Recursion;
 
 import java.util.Scanner;
 
-public class Q5_ReverseString {
+public class Q6_ReverseString {
     public static String reverseString(String str) {
         if (str.isEmpty()) return str;
         return reverseString(str.substring(1)) + str.charAt(0);
