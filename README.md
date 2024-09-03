@@ -30,3 +30,7 @@ Stay tuned for updates!
 ## Author
 
 **[Syed Muhammad Hussnain Raza](https://www.linkedin.com/in/syed-muhammad-hussnain-raza)**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
