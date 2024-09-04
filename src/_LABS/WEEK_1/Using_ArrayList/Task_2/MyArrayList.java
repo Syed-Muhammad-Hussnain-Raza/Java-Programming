@@ -3,7 +3,11 @@ package _LABS.WEEK_1.Using_ArrayList.Task_2;
 import java.util.ArrayList;
 
 public class MyArrayList {
-    ArrayList<Integer> list;
+    public ArrayList<Integer> list;
+
+    public MyArrayList(ArrayList<Integer> list) {
+        this.list = list;
+    }
 
     // Insert the value at end of the list
     public void addAtEnd(int value) {
