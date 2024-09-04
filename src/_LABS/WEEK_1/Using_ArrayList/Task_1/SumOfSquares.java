@@ -8,11 +8,10 @@ public class SumOfSquares {
 
     public static void calculateSum(int value, int start, int end) {
         int sum = 0;
-        // Calculate Sum
+        // Calculate sum of squares of given value
         for (int i = start; i < end; i++) {
             sum += value * value;
         }
-
         System.out.println(sum);
     }
     public static void main(String[] args) {
