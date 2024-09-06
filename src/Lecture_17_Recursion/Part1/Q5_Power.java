@@ -1,4 +1,4 @@
-package Lecture_17_Recursion;
+package Lecture_17_Recursion.Part1;
 
 import java.util.Scanner;
 
