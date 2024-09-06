@@ -1,4 +1,4 @@
-package Lecture_17_Recursion;
+package Lecture_17_Recursion.Part1;
 
 public class Q2_CalculateSum {
     public static void main(String[] args) {
