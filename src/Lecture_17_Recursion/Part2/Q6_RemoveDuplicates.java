@@ -1,5 +1,7 @@
 package Lecture_17_Recursion.Part2;
 
+import java.util.Scanner;
+
 public class Q6_RemoveDuplicates {
     public static boolean[] map = new boolean[26];
     public static String newString = "";
@@ -21,6 +23,11 @@ public class Q6_RemoveDuplicates {
     }
 
     public static void main(String[] args) {
-        removeDuplicates("aaaabbbbcxcccd", 0);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+
+        removeDuplicates(str, 0);
     }
 }
