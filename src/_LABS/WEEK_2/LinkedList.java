@@ -177,5 +177,123 @@ public class LinkedList {
         System.out.println();
     }
 
-    
+    /**
+     * This function will return reverse of the linked list
+     * @return will be a reversed linked list.
+     */
+    public LinkedList reverseUsingLoop() {
+        // array of size equals to nodes of linked list to store linked list.
+        Object[] array = new Object[sizeOf()];
+
+        Node curr = head;
+        // storing value of linked list in array in reverse order
+        int i = 0;
+        while (curr != null) {
+            array[i] = curr.data;
+            curr = curr.next;
+            i++ ;
+        }
+        LinkedList reverseList = new LinkedList();
+
+        // print linked list in reverse order using for loop
+        for (i = array.length - 1; i >= 0; i--) {
+            if (array[i] != null) {
+                reverseList.insertLast(array[i]);
+            }
+        }
+        return reverseList;
+    }
+
+    /**
+     * This function use a helper function to reverse a linked list using recursion
+     */
+    public void reverseUsingRecursion() {
+        head = reverseUsingRecursionHelper(head);
+    }
+
+    public LinkedList mergeLinkedLists(LinkedList list1, LinkedList list2) {
+        LinkedList result = new LinkedList();
+
+        // If both given lists are empty
+        if (list1 == null && list2 == null) {
+            return result;
+        }else if (list1 == null) { // If list1 is empty
+            return list2;
+        } else if (list2 == null) { // If list2 is empty
+            return list1;
+        }
+
+        // If none of list is empty
+        Node curr = list1.head;
+        while (curr != null) {
+            result.insertLast(curr.data);
+            curr = curr.next;
+        }
+
+        curr = list2.head;
+        while (curr != null) {
+            result.insertLast(curr.data);
+            curr = curr.next;
+        }
+
+        return result;
+    }
+
+    public void findMultipleOccurrence(int valueToFind) {
+        Node curr = head;
+
+        int nodeIndex = 1;
+        boolean found = false;
+
+        while( curr != null ) {
+            if (curr.data.equals(valueToFind)) {
+                System.out.println("Value found at node " + nodeIndex);
+                found = true;
+            }
+            curr = curr.next;
+            nodeIndex++;
+        }
+
+        if (!found) {
+            System.out.println("Value not found in list");
+        }
+    }
+
+    // Helper Functions
+
+    /**
+     * This function will return the size of linked list.
+     * @return the size of linked list in int.
+     */
+    private int sizeOf() {
+        int length = 0;
+        Node curr = head;
+
+        while (curr != null) {
+            length++ ;
+            curr = curr.next;
+        }
+        return length;
+    }
+
+    /**
+     *
+     * @param head is the first node of linked list
+     * @return it will be a node.
+     */
+    private Node reverseUsingRecursionHelper(Node head) {
+        // Base case
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // Recursive call
+        Node newHead = reverseUsingRecursionHelper(head.next);
+
+        // Reverse the links
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
 }
