@@ -4,14 +4,23 @@ import java.util.Scanner;
 
 public class Q4_Fibonacci {
 
-    public static void printFibonacci(int a, int b, int n) {
+    /**
+     * This function will print the fibonacci series for given number.
+     * @param firstTerm is the first term of series that will be 0 at start.
+     * @param secondTerm is the second term of series that will be 1 at start.
+     * @param n is the number whose fibonacci series we have to print.
+     */
+    public static void printFibonacci(int firstTerm, int secondTerm, int n) {
+        // base case
         if (n <= 0) {
             return;
         }
 
-        int c = a + b;
+        int c = firstTerm + secondTerm;
         System.out.print(c + " ");
-        printFibonacci(b, c, n-1);
+
+        // recursive call to function.
+        printFibonacci(secondTerm, c, n-1);
     }
 
     public static void main(String[] args) {
@@ -19,12 +28,12 @@ public class Q4_Fibonacci {
         System.out.print("Enter the number : ");
         int n = sc.nextInt();
 
-        int a = 0;
-        int b = 1;
+        int firstTerm = 0;
+        int secondTerm = 1;
 
-        System.out.print(a + " ");
-        System.out.print(b + " ");
+        System.out.print(firstTerm + " ");
+        System.out.print(secondTerm + " ");
 
-        printFibonacci(a, b, n - 2);
+        printFibonacci(firstTerm, secondTerm, n - 2);
     }
 }
