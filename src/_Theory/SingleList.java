@@ -43,4 +43,13 @@ public class SingleList {
 
         System.out.println("Node successfully added at end of the list");
     }
+
+    public void deleteStart(Object data) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        head = head.next;
+    }
 }
