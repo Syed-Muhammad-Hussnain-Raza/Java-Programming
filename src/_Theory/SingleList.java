@@ -39,7 +39,6 @@ public class SingleList {
         while (current.next != null) {
             current = current.next;
         }
-
         current.next = newNode;
 
         System.out.println("Node successfully added at end of the list");
