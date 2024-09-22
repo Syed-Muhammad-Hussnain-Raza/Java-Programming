@@ -181,4 +181,36 @@ public class SingleList {
             prev.next = curr.next;
         }
     }
+
+    /**
+     * This method will remove node from list after given node as parameter.
+     * @param node is reference and next node will be deleted.
+     */
+    public void removeAfter(SingleNode node) {
+        // case 1: if list is empty
+        if (head == null) {
+            System.out.println("List is already empty");
+            return;
+        }
+
+        // find required node in list
+        SingleNode curr = head;
+        while (curr != null && curr.data != node.data) {
+            curr = curr.next;
+        }
+
+        // if node not found in list
+        if (curr == null) {
+            System.out.println("Node not found in list");
+            return;
+        }
+
+        // if given node is last node of list
+        if (curr.next == null) {
+            System.out.println("No node next to given node.");
+            return;
+        }
+        // delete node
+        curr.next = curr.next.next;
+    }
 }
