@@ -146,7 +146,39 @@ public class SingleList {
         while (curr.next.next != null) {
             curr = curr.next;
         }
-
         curr.next = null;
+    }
+
+    /**
+     * This method will delete given node from list.
+     * @param node node to be deleted from list.
+     */
+    public void deleteNode(SingleNode node) {
+        // case 1: if list is empty
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        // find required node in list
+        SingleNode curr = head;
+        SingleNode prev = null;
+        while (curr != null && curr.data != node.data) {
+            prev = curr;
+            curr = curr.next;
+        }
+
+        // if node not found in list
+        if (curr == null) {
+            System.out.println("Node not found in list");
+            return;
+        }
+
+        // if node to be deleted is head
+        if (curr == head) {
+            head = head.next;
+        } else {
+            prev.next = curr.next;
+        }
     }
 }
