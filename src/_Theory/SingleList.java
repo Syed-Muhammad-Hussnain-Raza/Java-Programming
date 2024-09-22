@@ -81,6 +81,38 @@ public class SingleList {
         }
     }
 
+    /**
+     * This method will add new node after a specific node.
+     * @param node the node after which we have to insert a new node.
+     * @param data this will be new node that we want to insert.
+     */
+    public void insertAfter(SingleNode node, Object data) {
+        // Case 1: list is empty
+        if (head == null) {
+            System.out.println("Node not found in Linked List");
+            return;
+        }
+
+        // Case 2: check whole list to check if node present in list or not.
+        SingleNode curr = head;
+        while (curr != null && curr.data != node.data) {
+            curr = curr.next;
+        }
+        // if node not found, return here.
+        if (curr == null) {
+            System.out.println("Node not found in list");
+            return;
+        }
+
+        // Case 3: if node found in list then insert new node before it.
+        SingleNode newNode = new SingleNode(data);
+        // if is last node of linked list
+        if (curr.next != null) {
+            newNode.next = curr.next;
+        }
+        curr.next = newNode;
+    }
+
     public void deleteStart(Object data) {
         if (head == null) {
             System.out.println("List is empty");
