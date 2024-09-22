@@ -44,6 +44,43 @@ public class SingleList {
         System.out.println("Node successfully added at end of the list");
     }
 
+    /**
+     * This method will add new node before a specific node.
+     * @param node the node before which we have to insert a new node.
+     * @param data this will be new node that we want to insert.
+     */
+    public void insertBefore(SingleNode node, Object data) {
+        // Case 1: check is list empty?
+        if (head == null) {
+            System.out.println("Node not found in Linked List");
+            return;
+        }
+
+        // Case 2: check whole list, if node present in list or not?
+        SingleNode curr = head;
+        SingleNode prev = null;
+        while (curr != null && curr.data != node.data) {
+            prev = curr;
+            curr = curr.next;
+        }
+        // if node not found, return here.
+        if (curr == null) {
+            System.out.println("Node not found in list");
+            return;
+        }
+
+        // Case 3: if node found in list then insert new node before it.
+        SingleNode newNode = new SingleNode(data);
+        // if node is head before we have to insert new node
+        if (curr == head) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            prev.next = newNode;
+            newNode.next = curr;
+        }
+    }
+
     public void deleteStart(Object data) {
         if (head == null) {
             System.out.println("List is empty");
