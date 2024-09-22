@@ -213,4 +213,25 @@ public class SingleList {
         // delete node
         curr.next = curr.next.next;
     }
+
+    /**
+     * Calculate size of linked list.
+     * @return size in int form.
+     */
+    public int sizeOf() {
+        // if list is empty, size: 0
+        if (head == null) {
+            return 0;
+        }
+
+        int size = 0;
+
+        SingleNode curr = head;
+        while (curr != null) {
+            curr = curr.next;
+            size++ ;
+        }
+
+        return size;
+    }
 }
