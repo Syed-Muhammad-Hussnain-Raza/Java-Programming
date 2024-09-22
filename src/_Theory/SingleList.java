@@ -124,4 +124,29 @@ public class SingleList {
 
         head = head.next;
     }
+
+    /**
+     * This method will delete last node of linked list.
+     */
+    public void removeLast() {
+        // case 1: if list is empty
+        if (head == null) {
+            System.out.println("List is already empty");
+            return;
+        }
+
+        // case 2: if there is only one node
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+
+        // case 3: more than 1 node
+        SingleNode curr = head;
+        while (curr.next.next != null) {
+            curr = curr.next;
+        }
+
+        curr.next = null;
+    }
 }
