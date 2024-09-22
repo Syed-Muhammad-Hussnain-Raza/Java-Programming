@@ -215,6 +215,34 @@ public class SingleList {
     }
 
     /**
+     * This method will reverse the single linked list.
+     */
+    public void reverseList() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        SingleNode prev = null;
+        SingleNode curr = head;
+        SingleNode next ;
+
+        while (curr != null){
+            // first store next node
+            next = curr.next;
+            // changing next pointer of current to previous node
+            curr.next = prev;
+
+            // updating references of previous and current nodes
+            prev = curr;
+            curr = next;
+        }
+
+        // updating the head of linked list
+        head = prev;
+    }
+
+    /**
      * Calculate size of linked list.
      * @return size in int form.
      */
@@ -233,5 +261,42 @@ public class SingleList {
         }
 
         return size;
+    }
+
+    /**
+     * This method will remove duplicate nodes in list.
+     */
+    public void removeDuplicate() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        if (head.next == null) {
+            System.out.println("There is only one node in list");
+            return;
+        }
+
+        boolean duplicates = false;
+
+        SingleNode curr = head;
+        while (curr != null) {
+            SingleNode node = curr;
+            while (node.next != null) {
+                if (node.next.data == curr.data) {
+                    node.next = node.next.next;
+                    duplicates = true;
+                } else {
+                    node = node.next;
+                }
+            }
+            curr = curr.next;
+        }
+
+        if (duplicates) {
+            System.out.println("Duplicates removed successfully");
+        } else {
+            System.out.println("No duplicates found in list.");
+        }
     }
 }
