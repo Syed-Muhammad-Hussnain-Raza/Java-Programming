@@ -113,7 +113,10 @@ public class SingleList {
         curr.next = newNode;
     }
 
-    public void deleteStart(Object data) {
+    /**
+     * This method will delete first node of linked list.
+     */
+    public void deleteStart() {
         if (head == null) {
             System.out.println("List is empty");
             return;
